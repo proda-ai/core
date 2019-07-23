@@ -1,3 +1,8 @@
+# Proda Changes
+Custom core for introducing additional 0.19 elm functions into the 0.18 core.
+Introducing these changes on the current 0.18 product branch will reduce the scope of the differences between an elm19 and elm18 builds.
+
+
 # Elm Core Libraries
 
 [![Build Status](https://travis-ci.org/elm-lang/core.svg?branch=master)](https://travis-ci.org/elm-lang/core)
