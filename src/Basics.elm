@@ -2,7 +2,7 @@ module Basics exposing
   ( (==), (/=)
   , (<), (>), (<=), (>=), max, min, Order (..), compare
   , not, (&&), (||), xor
-  , (+), (-), (*), (/), (^), (//), rem, (%), negate, abs, sqrt, clamp, logBase, e
+  , (+), (-), (*), (/), (^), (//), rem, (%), modBy, negate, abs, sqrt, clamp, logBase, e
   , pi, cos, sin, tan, acos, asin, atan, atan2
   , round, floor, ceiling, truncate, toFloat
   , degrees, radians, turns
@@ -30,7 +30,7 @@ are your tuples so big?
 @docs not, (&&), (||), xor
 
 # Mathematics
-@docs (+), (-), (*), (/), (^), (//), rem, (%), negate, abs, sqrt, clamp, logBase, e
+@docs (+), (-), (*), (/), (^), (//), rem, (%), modBy, negate, abs, sqrt, clamp, logBase, e
 
 # Trigonometry
 @docs pi, cos, sin, tan, acos, asin, atan, atan2
@@ -154,6 +154,16 @@ rem =
 (%) : Int -> Int -> Int
 (%) =
   Native.Basics.mod
+
+
+{-| Perform [modular arithmetic](http://en.wikipedia.org/wiki/Modular_arithmetic).
+
+    modBy 2 7 == 1
+    modBy 4 -1 == 3
+-}
+modBy : Int -> Int -> Int
+modBy a b =
+  Native.Basics.mod b a
 
 
 {-| Exponentiation
